@@ -1,0 +1,7 @@
+{
+  "name": "hamtaroApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
