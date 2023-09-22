@@ -1,17 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="pink">
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <img src="../../assets/welcome.png" alt="welcome">
+  <p>
+    Welcome to the unofficial Hamtaro App! <br>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+    Explore the magical universe of Hamtaro with our app, where you can discover and learn about all the endearing characters from this beloved anime series. Immerse yourself in the adventures of Hamtaro and his friends, uncovering all the secrets this charming world has to offer. Enjoy the experience and have fun discovering everything about your favorite Hamtaro characters!</p>
+  <ion-button (click)="goToCharacters()" class="btn">Go to character information</ion-button>
+
+  </ion-content>

@@ -1,0 +1,26 @@
+ion-toolbar {
+    background-color: var(--ion-color-pink);
+}
+
+ion-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    img {
+        margin: 2em;
+        width: 70vw;
+
+        /**ANIMATION**/
+        -webkit-animation: spin 2000ms linear infinite, moveLeftToRight 5s linear infinite;
+        -moz-animation: spin 2000ms linear infinite, moveLeftToRight 5s linear infinite;
+        -ms-animation: spin 2000ms linear infinite, moveLeftToRight 5s linear infinite;
+        animation: spin 2000ms linear infinite, moveLeftToRight 5s linear infinite;
+        
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease;
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+    }
+}

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ character.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-card>
+      <img alt="Silhouette of mountains" [src]="apiUrl + '/' + character.image" />
+      <ion-card-header>
+        <ion-card-title>{{ character.name }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label><strong>Species:</strong> {{character.species}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label><strong>Gender:</strong> {{character.gender}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label><strong>Height:</strong> {{character.height}}</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label><strong>Birthday:</strong> {{character.date_of_birth}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <p>{{character.description}}</p>
+  </div>
+</ion-content>

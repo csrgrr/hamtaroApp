@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  themeToggle = false;
 
+    initializeDarkTheme(isDark: boolean) {
+      this.themeToggle = isDark;
+      this.toggleDarkTheme(isDark);
+    }
+
+    toggleChange(ev: any) {
+      this.toggleDarkTheme(ev.detail.checked);
+    }
+  
+    toggleDarkTheme(shouldAdd: boolean | undefined) {
+      document.body.classList.toggle('dark', shouldAdd);
+    }
   constructor() {}
 
 }

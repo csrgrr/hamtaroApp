@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="pink">
     <ion-title>
-      Tab 3
+      Settings
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- <ion-toggle color="dark" [checked]="true"></ion-toggle> -->
+  <div class="dark-mode">
+    <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between"><strong>Dark Mode</strong></ion-toggle>
+    <div>
+      <img src="../../assets/hamster-meme.gif" alt="meme">
+      <p>There's no light theme if you are always in the dark.</p>
+    </div>
+  </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
 </ion-content>
