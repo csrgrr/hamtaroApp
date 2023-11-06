@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'character-modal',
     loadChildren: () => import('./character-modal/character-modal.module').then( m => m.CharacterModalPageModule)
+  },
+  {
+    path: 'details/:id',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
   }
 ];
 @NgModule({

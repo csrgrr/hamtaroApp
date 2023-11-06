@@ -1,46 +1,47 @@
 
 <ion-header [translucent]="true">
-<ion-toolbar color="pink">
-  <ion-buttons slot="primary">
-    <ion-button id="open-modal" expand="block" fill="solid">
-      <ion-icon slot="end" name="help-circle"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Characters</ion-title>
-</ion-toolbar>
-</ion-header>
-
-
-<ion-content>
-  <!---------------------------------->
-  <ion-modal [keepContentsMounted]="true" trigger="open-modal" #modal>
-    <ng-template>
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-button (click)="modal.dismiss()">Cancel</ion-button>
-          </ion-buttons>
-          <ion-title>Instructions</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">Click on any card to see all the full character information.</ion-content>
-    </ng-template>
-  </ion-modal>
-  <!---------------------------------->
-
-    <div class="content" *ngIf="!charactersLoaded">
-      <ion-spinner name="crescent"></ion-spinner>
+  <ion-toolbar color="pink">
+    <ion-buttons slot="primary">
+      <ion-button id="open-modal" expand="block" fill="solid">
+        <ion-icon slot="end" name="help-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Characters</ion-title>
+  </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content>
+    <!---------------------------------->
+    <ion-modal [keepContentsMounted]="true" trigger="open-modal" #modal>
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="modal.dismiss()">Cancel</ion-button>
+            </ion-buttons>
+            <ion-title>Instructions</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">Click on any card to see all the full character information.</ion-content>
+      </ng-template>
+    </ion-modal>
+    <!---------------------------------->
+  
+      <div class="content" *ngIf="!charactersLoaded">
+        <ion-spinner name="crescent"></ion-spinner>
+      </div>
+  
+    <div class="content" *ngIf="charactersLoaded">
+  
+    <ion-card *ngFor="let character of characters" (click)="presentModal(character)">
+      <img alt="character-img" [src]="apiUrl + '/' + character.image" />
+      <ion-card-header>
+        <ion-card-subtitle>{{character.species}}</ion-card-subtitle>
+        <ion-card-title>{{character.name}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  
     </div>
-
-  <div class="content" *ngIf="charactersLoaded">
-
-  <ion-card *ngFor="let character of characters" (click)="presentModal(character)">
-    <img alt="character-img" [src]="apiUrl + '/' + character.image" />
-    <ion-card-header>
-      <ion-card-subtitle>{{character.species}}</ion-card-subtitle>
-      <ion-card-title>{{character.name}}</ion-card-title>
-    </ion-card-header>
-  </ion-card>
-
-  </div>
-</ion-content>
+  </ion-content>
+  

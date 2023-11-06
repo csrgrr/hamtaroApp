@@ -13,5 +13,10 @@
 
     Explore the magical universe of Hamtaro with our app, where you can discover and learn about all the endearing characters from this beloved anime series. Immerse yourself in the adventures of Hamtaro and his friends, uncovering all the secrets this charming world has to offer. Enjoy the experience and have fun discovering everything about your favorite Hamtaro characters!</p>
   <ion-button (click)="goToCharacters()" class="btn">Go to character information</ion-button>
+  <div>
+    <strong>Network status</strong>
+    <div>{{ networkStatus | json }}</div>
+  </div>
+
 
   </ion-content>

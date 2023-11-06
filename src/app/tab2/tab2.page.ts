@@ -23,7 +23,7 @@ export class Tab2Page implements OnInit {
     private modalController: ModalController
   ) {}
 
-  
+ 
   ngOnInit() {
     this.getCharacters().subscribe(
       (res) => this.handleCharacterResponse(res),
@@ -41,7 +41,7 @@ export class Tab2Page implements OnInit {
 
 
   getCharacters() {
-    return this.http.get(`${this.apiUrl}characters/list`);
+    return this.http.get(`${this.apiUrl}/characters/list`);
   }
 
   async presentModal(character: any) {
